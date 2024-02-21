@@ -22,9 +22,6 @@ with open("players.json","r") as file:
 with open("channels.json","r") as file:
     bot.channel_list = json.load(file)
 
-with open("rpChannels.json","r") as file:
-    bot.rp_channel_list = json.load(file)
-
 with open("roles.json","r") as file:
     bot.adminRoles = json.load(file)
 
