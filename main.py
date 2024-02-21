@@ -4,6 +4,7 @@ import json
 import os
 from dotenv import load_dotenv
 import asyncio
+from tinydb import TinyDB, Query
 
 intents = discord.Intents.default()
 intents.reactions = True
@@ -11,8 +12,15 @@ intents.members = True
 intents.message_content = True
 
 bot = commands.Bot(command_prefix="$", intents=intents)
+bot.uid = 1208257805459521546
+
+with open("players.json","r") as file:
+    bot.players = json.load(file)
 
 with open("channels.json","r") as file:
+    bot.channel_list = json.load(file)
+
+with open("rpChannels.json","r") as file:
     bot.channel_list = json.load(file)
 
 with open("roles.json","r") as file:

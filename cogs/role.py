@@ -25,7 +25,7 @@ class Role(commands.Cog):
     
     @commands.Cog.listener()
     async def on_raw_reaction_add(self, reaction):
-        if reaction.member.id != 1208257805459521546:
+        if reaction.member.id != self.bot.uid:
             if reaction.channel_id == self.bot.channel_list["role-selection"] and str(reaction.emoji) in self.roles:
                 role = discord.utils.get(reaction.member.guild.roles, name=self.roles[str(reaction.emoji)])
                 await reaction.member.add_roles(role)
