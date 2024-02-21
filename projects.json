@@ -1,1 +1,65 @@
-{"The Seed of Draconis": {"title": "The Seed of Draconis", "image": "", "desc": "The Tree of Life has sprouted a new seeds, and one of them possesses the essence of Dragons. Were it to be fueled with the power of the monsters, it would sprout and infuse The Nest with draconic power.\nCompleting this project unlocks:\n* Dragon Creature Type\n* Dragon Tier Features and Actions", "cost": 50, "progress": 0, "type": "monster", "msgId": 1209354961113321522}, "The Seed of The Infernal": {"title": "The Seed of The Infernal", "image": "", "desc": "The Tree of Life has sprouted a new seeds, and one of them possesses the essence of Infernals. Were it to be fueled with the power of the monsters, it would sprout and infuse The Nest with infernal power.\nCompleting this project unlocks:\n* Fiend Creature Type\n* Fiend Tier Features and Actions", "cost": 50, "progress": 0, "type": "monster", "msgId": 1209355149131120690}, "The Seed of Celeste": {"title": "The Seed of Celeste", "image": "", "desc": "The Tree of Life has sprouted a new seeds, and one of them possesses the essence of Celestials. Were it to be fueled with the power of the monsters, it would sprout and infuse The Nest with celestial power.\nCompleting this project unlocks:\n* Celestial Creature Type\n* Celestial Tier Features and Actions", "cost": 50, "progress": 0, "type": "monster", "msgId": 1209355277477093416}, "The Seed of Might": {"title": "The Seed of Might", "image": "", "desc": "The Tree of Life has sprouted a new seeds, and one of them possesses the essence of Pure Monsters. Were it to be fueled with the power of the monsters, it would sprout and infuse The Nest with monstrous power.\nCompleting this project unlocks:\n* Monstrosity Creature Type\n* Monstrosity Tier Features and Actions", "cost": 25, "progress": 0, "type": "monster", "msgId": 1209355421299511317}, "Breeding Den": {"title": "Breeding Den", "image": "", "desc": "There is strength in numbers, but there is also a cost to keep those numbers strong. The Nest needs resources to support increasing its numbers. With a concerted effort, the monsters of the Nest can put those breedable hunters to good use...\nCompleting this project unlocks:\n* Minions\n* Breeding Expeditions", "cost": 100, "progress": 0, "type": "monster", "msgId": 1209356165490671650}, "The Kinksmith's Proposition 1": {"title": "The Kinksmith's Proposition 1", "image": "", "desc": "The Kinksmith in Alur really wants funding to create more kinky equipment for the guild! Completion of this project guarantees the successful research and development of new items!\nCompletion of this project unlocks:\n* Access to uncommon magic gear\n* Access to uncommon magic toys", "cost": 2000, "progress": 300, "type": "hunter", "msgId": 1209356864379293777}, "Personal Housing": {"title": "Personal Housing", "image": "", "desc": "Hunters deserve their own piece of land and all the respect that earns them. The Guild has offered to work with the city planners to negotiate deeds for purchase for the hunters of the guild. Plots of land to develop as its owner desires. Be it shops, private homes, or other. \nCompletion of this project unlocks:\n* Access to Land Purchasing\n* Access to Basic Business", "cost": 5000, "progress": 325, "type": "hunter", "msgId": 1209357637377065031}}
+{
+    "The Seed of Draconis": {
+        "title": "The Seed of Draconis",
+        "image": "",
+        "desc": "The Tree of Life has sprouted a new seeds, and one of them possesses the essence of Dragons. Were it to be fueled with the power of the monsters, it would sprout and infuse The Nest with draconic power.\nCompleting this project unlocks:\n* Dragon Creature Type\n* Dragon Tier Features and Actions",
+        "cost": 50,
+        "progress": 0,
+        "type": "monster",
+        "msgId": 1209354961113321522
+    },
+    "The Seed of The Infernal": {
+        "title": "The Seed of The Infernal",
+        "image": "",
+        "desc": "The Tree of Life has sprouted a new seeds, and one of them possesses the essence of Infernals. Were it to be fueled with the power of the monsters, it would sprout and infuse The Nest with infernal power.\nCompleting this project unlocks:\n* Fiend Creature Type\n* Fiend Tier Features and Actions",
+        "cost": 50,
+        "progress": 0,
+        "type": "monster",
+        "msgId": 1209355149131120690
+    },
+    "The Seed of Celeste": {
+        "title": "The Seed of Celeste",
+        "image": "",
+        "desc": "The Tree of Life has sprouted a new seeds, and one of them possesses the essence of Celestials. Were it to be fueled with the power of the monsters, it would sprout and infuse The Nest with celestial power.\nCompleting this project unlocks:\n* Celestial Creature Type\n* Celestial Tier Features and Actions",
+        "cost": 50,
+        "progress": 0,
+        "type": "monster",
+        "msgId": 1209355277477093416
+    },
+    "The Seed of Might": {
+        "title": "The Seed of Might",
+        "image": "",
+        "desc": "The Tree of Life has sprouted a new seeds, and one of them possesses the essence of Pure Monsters. Were it to be fueled with the power of the monsters, it would sprout and infuse The Nest with monstrous power.\nCompleting this project unlocks:\n* Monstrosity Creature Type\n* Monstrosity Tier Features and Actions",
+        "cost": 25,
+        "progress": 0,
+        "type": "monster",
+        "msgId": 1209355421299511317
+    },
+    "Breeding Den": {
+        "title": "Breeding Den",
+        "image": "",
+        "desc": "There is strength in numbers, but there is also a cost to keep those numbers strong. The Nest needs resources to support increasing its numbers. With a concerted effort, the monsters of the Nest can put those breedable hunters to good use...\nCompleting this project unlocks:\n* Minions\n* Breeding Expeditions",
+        "cost": 100,
+        "progress": 0,
+        "type": "monster",
+        "msgId": 1209356165490671650
+    },
+    "The Kinksmith's Proposition 1": {
+        "title": "The Kinksmith's Proposition 1",
+        "image": "",
+        "desc": "The Kinksmith in Alur really wants funding to create more kinky equipment for the guild! Completion of this project guarantees the successful research and development of new items!\nCompletion of this project unlocks:\n* Access to uncommon magic gear\n* Access to uncommon magic toys",
+        "cost": 2000,
+        "progress": 300,
+        "type": "hunter",
+        "msgId": 1209356864379293777
+    },
+    "Personal Housing": {
+        "title": "Personal Housing",
+        "image": "",
+        "desc": "Hunters deserve their own piece of land and all the respect that earns them. The Guild has offered to work with the city planners to negotiate deeds for purchase for the hunters of the guild. Plots of land to develop as its owner desires. Be it shops, private homes, or other. \nCompletion of this project unlocks:\n* Access to Land Purchasing\n* Access to Basic Business",
+        "cost": 5000,
+        "progress": 325,
+        "type": "hunter",
+        "msgId": 1209357637377065031
+    }
+}
