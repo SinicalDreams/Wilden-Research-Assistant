@@ -4,7 +4,9 @@ import json
 import os
 from dotenv import load_dotenv
 import asyncio
-from tinydb import TinyDB, Query
+import logging
+
+discord.utils.setup_logging(level=logging.INFO, root=False)
 
 intents = discord.Intents.default()
 intents.reactions = True
@@ -21,7 +23,7 @@ with open("channels.json","r") as file:
     bot.channel_list = json.load(file)
 
 with open("rpChannels.json","r") as file:
-    bot.channel_list = json.load(file)
+    bot.rp_channel_list = json.load(file)
 
 with open("roles.json","r") as file:
     bot.adminRoles = json.load(file)

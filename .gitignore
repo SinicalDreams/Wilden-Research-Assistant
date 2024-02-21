@@ -1,3 +1,5 @@
 /.env
 /.venv
 /.vscode
+players.json
+discord.log

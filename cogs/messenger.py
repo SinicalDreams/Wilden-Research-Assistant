@@ -5,22 +5,31 @@ class Messenger(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
     
+    @commands.command()
+    async def dm(self, ctx:commands.Context, uid, *, content):
+        member = ctx.guild.get_member(int(uid))
+        dm = await self.get_dm(member)
+
+        await dm.send(content)
+        await ctx.message.delete()
+
     async def get_dm(self, member):
         dm = member.dm_channel
         if member.dm_channel == None:
             dm = await member.create_dm()
         return dm
     
-    async def send_char_approval(self, member, type):
+    async def send_char_approval(self, member, chartype):
         dm = await self.get_dm(member)
         
-        if type == 'Hunter':
+        if chartype == 'Hunter':
             desc = "Please take a moment to run `!setup` in https://discord.com/channels/1208228064543252591/1208554890926882908 to finalize your character and validate them for automated rewards!\n**Failure to do this will result in no rewards being earned!**"
         else:
             desc = "Please take a moment to run `$setup monsterName` in https://discord.com/channels/1208228064543252591/1208554890926882908 to finalize your character and validate them for automated rewards!\n**Failure to do this will result in no rewards being earned!**"
+        
         embed=discord.Embed(
             title=f"Intro Gate {type} Approved - Automated Response", 
-            description=f"Hi {member.name}! Your {type} has been approved! {desc}\n\nThis message is automated. If you have questions, please seek answers by asking them in https://discord.com/channels/1208228064543252591/1208340344320561202.", color=discord.Color.from_rgb(0,0,0))
+            description=f"Hi {member.name}! Your {chartype} has been approved! {desc}\n\nThis message is automated. If you have questions, please seek answers by asking them in https://discord.com/channels/1208228064543252591/1208340344320561202.", color=discord.Color.from_rgb(0,0,0))
         
         await dm.send(embed=embed)
 
