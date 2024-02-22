@@ -29,7 +29,7 @@ class Messenger(commands.Cog):
         
         embed=discord.Embed(
             title=f"Intro Gate {type} Approved - Automated Response", 
-            description=f"Hi {member.name}! Your {chartype} has been approved! {desc}\n\nThis message is automated. If you have questions, please seek answers by asking them in https://discord.com/channels/1208228064543252591/1208340344320561202.", color=discord.Color.from_rgb(0,0,0))
+            description=f"Hi {member.name}! Your {chartype} has been approved! {desc}\n\nThis message is automated. If you have questions, please seek answers by asking them in https://discord.com/channels/1208228064543252591/1208230390033154100.", color=discord.Color.from_rgb(0,0,0))
         
         await dm.send(embed=embed)
 

@@ -76,6 +76,7 @@ class Approval(commands.Cog):
                         "post_count" : 0,
                         "last_awarded": 0,
                         "last_cd" : "",
+                        "points" : 0,
                         "chars" : {}
                     }
                     with open("players.json","w") as file:

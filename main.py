@@ -1,4 +1,5 @@
 import discord
+import pointshop_modal
 from discord.ext import commands
 import json
 import os
@@ -30,6 +31,7 @@ with open("projects.json","r") as file:
 
 @bot.event
 async def on_ready():
+    bot.add_view(pointshop_modal.PointShopView(bot))
     print(f"Logged on as {bot.user}!")
 
 
