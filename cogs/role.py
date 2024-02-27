@@ -15,7 +15,7 @@ class Role(commands.Cog):
             "🍆" : "Breeder",
             "🎨" : "Artist",
             "📣" : "Server Announcements",
-            "📯" : "Hunt Ping",
+            "📯" : "Looking for Hunt",
             "🎭" : "Looking for RP",
             "🩸" : "Looking for Spar",
             "🔀" : "Looking for Trade",

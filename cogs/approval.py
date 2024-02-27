@@ -12,11 +12,15 @@ class Approval(commands.Cog):
         if ctx.channel.id in self.bot.channel_list["bot-spam"]:
             id = str(ctx.author.id)
             if id in self.bot.players:
-                self.bot.players[id]["chars"]["Monster"] = {
-                    "name" : monsterName,
-                    "level" : 4,
-                    "prog" : 0
-                }
+                if "Monster" not in self.bot.players[id]["chars"]:
+                    self.bot.players[id]["chars"]["Monster"] = {
+                        "name" : monsterName,
+                        "level" : 4,
+                        "prog" : 0
+                    }
+                else:
+                    self.bot.players[id]["chars"]["Monster"]["name"] = monsterName
+
                 await ctx.send(f"Your monster has been set to {monsterName}!")
             else:
                 await ctx.send(f"You don't have an approval yet!")
@@ -31,8 +35,11 @@ class Approval(commands.Cog):
     async def on_message(self, message):
         
         if message.channel.id in self.bot.channel_list["bot-spam"] and message.author.id == 261302296103747584:
-            content = message.embeds[0].to_dict()
-
+            try:
+                content = message.embeds[0].to_dict()
+            except:
+                return
+            uid = 0
             if "Initial Setup" in content["title"]:
                 for field in content["fields"]:
                     if field["name"] == "User ID":
@@ -46,7 +53,17 @@ class Approval(commands.Cog):
                         }
                     with open("players.json","w") as file:
                         file.write(json.dumps(self.bot.players))
+            else:
+                for field in content["fields"]:
+                    if field["name"] == "User ID":
+                        uid = str(field["value"])
+                    if field["name"] == "Current Experience":
+                        xp = field["value"].replace(',','')
+                if uid in self.bot.players:
+                    self.bot.players[uid]["chars"]["Hunter"]["xp"] = int(xp.replace(',',''))
 
+                    with open("players.json","w") as file:
+                        file.write(json.dumps(self.bot.players))
 
 
 

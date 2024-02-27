@@ -11,14 +11,30 @@ time = datetime.time(hour=0, minute=0, tzinfo=utc)
 class Rewards(commands.Cog):
     def __init__(self, bot):
         self.bot = bot
-        self.my_task.start()
+        self.task_reward.start()
 
     def cog_unload(self):
-        self.my_task.cancel()
+        self.task_reward.cancel()
 
     @tasks.loop(time=time)
-    async def my_task(self):
-        print("My task is running!")
+    async def task_reward(self):
+        log = await self.bot.fetch_channel(self.bot.channel_list["loot-log"])
+
+        for player in self.bot.players:
+            user = self.bot.get_user(int(player))
+            print(user)
+            print(user.mention)
+            p = self.bot.players[player]
+            if p["post_count"] - p["last_awarded"] > 5000:
+                rewards = divmod(p["post_count"] - p["last_awarded"], 5000)
+                p["last_awarded"] += rewards[0]*5000
+                p["points"] += rewards[0]
+                embed = discord.Embed(title="RP Award", description=f"{user.mention} has earned {rewards[0]} {'points' if rewards[0] > 1 else 'point'} for roleplaying!")
+                await log.send(content=f"{user.mention}")
+                await log.send(embed=embed)
+        
+        with open("players.json","w") as file:
+           file.write(json.dumps(self.bot.players))
 
     @commands.Cog.listener()
     async def on_message(self, message):
@@ -30,11 +46,12 @@ class Rewards(commands.Cog):
                         self.bot.players[str(message.author.id)]["last_cd"] = curTime
                     
                     if self.bot.players[str(message.author.id)]["last_cd"] + 60000000000 < curTime:
-                        self.bot.players[str(message.author.id)]["last_cd"] = curTime
-                        self.bot.players[str(message.author.id)]["post_count"] += len(message.content)
+                        pass
+                    self.bot.players[str(message.author.id)]["last_cd"] = curTime
+                    self.bot.players[str(message.author.id)]["post_count"] += len(message.content)
 
-                        with open("players.json","w") as file:
-                            file.write(json.dumps(self.bot.players))
+                    with open("players.json","w") as file:
+                        file.write(json.dumps(self.bot.players))
 
     @commands.command()
     async def calculate(self, ctx:commands.Context):
@@ -58,7 +75,7 @@ class Rewards(commands.Cog):
         
         await ctx.message.delete()
 
-    @commands.commad()
+    @commands.command()
     async def populate_point_shop(self, ctx:commands.Context):
         if ctx.author.get_role(self.bot.adminRoles["head-researcher"]) != None:
             await ctx.message.delete()
@@ -66,7 +83,26 @@ class Rewards(commands.Cog):
                  
             await ctx.send(embed=embed, view=pointshop_modal.PointShopButtonView(self.bot))
 
-    
+    @commands.command()
+    async def reward(self, ctx:commands.Context):
+        log = await self.bot.fetch_channel(self.bot.channel_list["loot-log"])
+
+        for player in self.bot.players:
+            user = self.bot.get_user(int(player))
+            print(user)
+            p = self.bot.players[player]
+            if p["post_count"] - p["last_awarded"] > 5000:
+                rewards = divmod(p["post_count"] - p["last_awarded"], 5000)
+                p["last_awarded"] += rewards[0]*5000
+                p["points"] += rewards[0]
+                embed = discord.Embed(title="RP Award", description=f"{user.mention} has earned {rewards[0]} {'points' if rewards[0] > 1 else 'point'} for roleplaying!")
+                await log.send(content=f"{user.mention}")
+                await log.send(embed=embed)
+        
+        with open("players.json","w") as file:
+           file.write(json.dumps(self.bot.players))
+
+        await ctx.message.delete()
 
 
 async def setup(bot):

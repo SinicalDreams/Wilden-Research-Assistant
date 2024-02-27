@@ -13,7 +13,7 @@
         "image": "",
         "desc": "The Tree of Life has sprouted a new seeds, and one of them possesses the essence of Infernals. Were it to be fueled with the power of the monsters, it would sprout and infuse The Nest with infernal power.\nCompleting this project unlocks:\n* Fiend Creature Type\n* Fiend Tier Features and Actions",
         "cost": 50,
-        "progress": 0,
+        "progress": 10,
         "type": "monster",
         "msgId": 1209355149131120690
     },
@@ -25,15 +25,6 @@
         "progress": 0,
         "type": "monster",
         "msgId": 1209355277477093416
-    },
-    "The Seed of Might": {
-        "title": "The Seed of Might",
-        "image": "",
-        "desc": "The Tree of Life has sprouted a new seeds, and one of them possesses the essence of Pure Monsters. Were it to be fueled with the power of the monsters, it would sprout and infuse The Nest with monstrous power.\nCompleting this project unlocks:\n* Monstrosity Creature Type\n* Monstrosity Tier Features and Actions",
-        "cost": 25,
-        "progress": 0,
-        "type": "monster",
-        "msgId": 1209355421299511317
     },
     "Breeding Den": {
         "title": "Breeding Den",
@@ -49,7 +40,7 @@
         "image": "",
         "desc": "The Kinksmith in Alur really wants funding to create more kinky equipment for the guild! Completion of this project guarantees the successful research and development of new items!\nCompletion of this project unlocks:\n* Access to uncommon magic gear\n* Access to uncommon magic toys",
         "cost": 2000,
-        "progress": 300,
+        "progress": 400,
         "type": "hunter",
         "msgId": 1209356864379293777
     },
@@ -58,8 +49,17 @@
         "image": "",
         "desc": "Hunters deserve their own piece of land and all the respect that earns them. The Guild has offered to work with the city planners to negotiate deeds for purchase for the hunters of the guild. Plots of land to develop as its owner desires. Be it shops, private homes, or other. \nCompletion of this project unlocks:\n* Access to Land Purchasing\n* Access to Basic Business",
         "cost": 5000,
-        "progress": 325,
+        "progress": 365,
         "type": "hunter",
         "msgId": 1209357637377065031
+    },
+    "Monster Bondage": {
+        "title": "Monster Bondage",
+        "image": "",
+        "desc": "The Kingdom of Alur's political sphere is in heavy debate about the topic surrounding the capture of the Wilden Expanse's monstrous inhabitants. While the current debate leans heavily in favor of 'monster rights', the governing body has approved a tentative research project in the development of equipment designed to temporarily immobilize monsters and aid hunters in their work. Dubbed Monster Bondage, the research teams have committed- with proper funding- the development of capture devices on the condition and new rule that monsters be released into the wild following a hunt.",
+        "cost": 2000,
+        "progress": 0,
+        "type": "hunter",
+        "msgId": 1210457699444068393
     }
 }

@@ -31,7 +31,7 @@ with open("projects.json","r") as file:
 
 @bot.event
 async def on_ready():
-    bot.add_view(pointshop_modal.PointShopView(bot))
+    bot.add_view(pointshop_modal.PointShopButtonView(bot))
     print(f"Logged on as {bot.user}!")
 
 
